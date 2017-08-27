@@ -1,0 +1,65 @@
+<html>
+<head>
+</head>
+<body>
+
+<script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+<script src="https://cdn.tinymce.com/4/tinymce.min.js"></script>
+
+
+
+<div id="showNotice" style="position: absolute; width: 100%; height: 100%; background-color: #FFFFFF">
+<div>
+<b>Welcome to the Page Manager TinyMCE 4.X Demo!</b>
+<hr size=1>
+
+<input type="Button" value="Continue" id="startEditor">
+</div>
+</div>
+
+<script>
+
+
+
+$(document).on('click','#startEditor',function () {
+
+
+tinymce.init({
+  selector: "#mytextarea",
+  toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent',
+  height: 700,
+ 
+    pm_section_def:{
+	'v':{ text:'Volume', 'class':'np-header-volume', 'data-name':'Volume' },
+	'c':{ text:'Chapter','class':'np-header-chapter', 'data-name':'Chapter' },
+	'p':{ text:'Part', 'class':'np-header-part', 'data-name':'Part' }
+    },
+    pm_section_order:'vcp'
+
+  plugins: ['code paste'],
+  external_plugins: {
+    'pagemanager': 'https://knowzero.github.io/tinymce4-pagemanager/pagemanager/plugin.min.js'
+  }
+});
+$('#showNotice').hide();
+
+});
+
+$(document).on('click','#shMail',function () {
+$(this).html( atob(atob('YTI1dmQzcGxjbTk0'))+'@'+atob('eWFob28uY29t') );
+});
+
+</script>
+
+
+
+
+<hr size=1>
+
+<textarea id="mytextarea"></textarea>
+
+</body>
+</html>
