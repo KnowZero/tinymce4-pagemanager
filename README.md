@@ -1,4 +1,4 @@
-Current Version: 0.01-Alpha
+Current Version: 0.02-Alpha
 
 This is an attempt to add multiple page management to TinyMCE4.
 
@@ -21,7 +21,7 @@ Once I am done coding the basic stuff, I'll clean up the code and make it more p
 
 #### Options:
 
-  pm_section_def = A HASH/ASSOCIATED ARRAY that sets the definitions for the page types (HASH/ASSOCIAT)
+  pm_section_def = A HASH/ASSOCIATED ARRAY that sets the definitions for the page types
 
      sub options: 
           text = Sets the text
@@ -31,7 +31,13 @@ Once I am done coding the basic stuff, I'll clean up the code and make it more p
 
   pm_section_order = Sets the nesting order of the page types
   
- 
+  pm_fold_mode = A string that sets fold mode of the pages to reduce load.
+
+      settings: 
+          none = Disabled (default)
+	  visibility = Uses visibility: hidden and shows when pages come into view on scroll
+          display = Uses display: none and block when pages come into view on scroll
+          page = Uses display: none (no scrolling)
 
 #### Commands:
 
