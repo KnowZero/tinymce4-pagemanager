@@ -16,6 +16,13 @@
 <b>Welcome to the Page Manager TinyMCE 4.X Demo!</b>
 <hr size=1>
 
+Select Fold Mode: <select id="setFoldMode">
+<option value="none" selected>none</option>
+<option value="visibility">visibility</option>
+<option value="display">display</option>
+<option value="page">page</option>
+</select>
+
 <input type="Button" value="Continue" id="startEditor">
 </div>
 </div>
@@ -33,11 +40,11 @@ tinymce.init({
   height: 700,
  
     pm_section_def:{
-	'v':{ text:'Volume', 'class':'np-header-volume', 'data-name':'Volume' },
-	'c':{ text:'Chapter','class':'np-header-chapter', 'data-name':'Chapter' },
-	'p':{ text:'Part', 'class':'np-header-part', 'data-name':'Part' }
+
+	'p':{ text:'Page', 'class':'np-header-part', 'data-name':'Page' }
     },
-    pm_section_order:'vcp'
+    pm_section_order:'p',
+    pm_fold_mode:'',
 
   plugins: ['code paste'],
   external_plugins: {
@@ -52,11 +59,15 @@ $(document).on('click','#shMail',function () {
 $(this).html( atob(atob('YTI1dmQzcGxjbTk0'))+'@'+atob('eWFob28uY29t') );
 });
 
+$(document).on('click','#addpage',function () {
+   tinymce.get('mytextarea').execCommand( 'mcePMAddPage', false, { type:'p' } );
+});
+
 </script>
 
 
-
-
+<hr size=1>
+<button id="addpage">Add Page</button>
 <hr size=1>
 
 <textarea id="mytextarea"></textarea>
